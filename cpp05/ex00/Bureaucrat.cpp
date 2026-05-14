@@ -8,6 +8,7 @@ Bureaucrat::Bureaucrat(std::string _name, int _grade) : name(_name)
 		throw Bureaucrat::GradeTooHighException();
 	if (_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+	std::cout << "this is the name :" << name << std::endl;
 	this->grade = _grade;
 }
 
@@ -55,6 +56,6 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {
-	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << std::endl;
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << "." << std::endl;
 	return (os);
 }

@@ -6,11 +6,11 @@ int main()
 	// std::cout << Bureaucrat::GradeTooHighException().what() << std::endl;
 	/*         constructor tests               */
 	Bureaucrat a;
-	Bureaucrat b("sma9lo", 1);
-	Bureaucrat d("sma9lo", 150);
+	Bureaucrat b("moha", 1);
+	Bureaucrat d("moha", 150);
 	try
 	{
-		Bureaucrat c("sma9lo", 200);
+		Bureaucrat c("moha", 200);
 	}
 	catch (std::exception &e)
 	{
@@ -18,7 +18,7 @@ int main()
 	}
 	try
 	{
-		Bureaucrat e("spopo", 0);
+		Bureaucrat e("anas", 0);
 	}
 	catch (std::exception &e)
 	{

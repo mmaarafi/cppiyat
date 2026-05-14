@@ -1,71 +1,71 @@
-#include "AForm.hpp"
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 
-AForm::AForm(): name("default"), sign(false), grade_s(100), grade_e(100) {}
+Form::Form(): name("default"), sign(false), grade_s(100), grade_e(100) {}
 
-AForm::AForm(std::string _name, int _grade_s, int _grade_e): name(_name), sign(false), grade_s(_grade_s), grade_e(_grade_e)
+Form::Form(std::string _name, int _grade_s, int _grade_e): name(_name), sign(false), grade_s(_grade_s), grade_e(_grade_e)
 {
 	if (grade_s < 1)
-		throw AForm::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	if (grade_s > 150)
-		throw AForm::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	if (grade_e < 1)
-		throw AForm::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	if (grade_e > 150)
-		throw AForm::GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
-AForm::AForm(const AForm &cp): name(cp.name), sign(cp.sign), grade_s(cp.grade_s), grade_e(cp.grade_e) {}
+Form::Form(const Form &cp): name(cp.name), sign(cp.sign), grade_s(cp.grade_s), grade_e(cp.grade_e) {}
 
-AForm &AForm::operator=(const AForm &obj)
+Form &Form::operator=(const Form &obj)
 {
 	this->sign = obj.sign;
 	return (*this);
 }
 
-AForm::~AForm() {}
+Form::~Form() {}
 
-const std::string AForm::getName() const
+const std::string Form::getName() const
 {
 	return (this->name);
 }
 
-int AForm::getGradeE() const
+int Form::getGradeE() const
 {
 	return (this->grade_e);
 }
 
-int AForm::getGradeS() const
+int Form::getGradeS() const
 {
 	return (this->grade_s);
 }
 
-bool AForm::getSign() const
+bool Form::getSign() const
 {
 	return (this->sign);
 }
 
-void AForm::beSigned(const Bureaucrat &obj)
+void Form::beSigned(const Bureaucrat &obj)
 {
 	if (this->sign == false)
 	{
 		if (obj.getGrade() > grade_s)
-			throw AForm::GradeTooLowException();
+			throw Form::GradeTooLowException();
 		this->sign = true;
 	}
 }
 
-const char* AForm::GradeTooHighException::what() const throw() {
-	return "AForm grade is too high (below 1)!";
+const char* Form::GradeTooHighException::what() const throw() {
+	return "grade is too high!";
 }
 
-const char* AForm::GradeTooLowException::what() const throw() {
-	return "AForm grade is too low (above 150)!";
+const char* Form::GradeTooLowException::what() const throw() {
+	return "grade is too low!";
 }
 
-std::ostream& operator<<(std::ostream& os, const AForm& obj)
+std::ostream& operator<<(std::ostream& os, const Form& obj)
 {
-	os << obj.getName() << ", AForm grade_e " << obj.getGradeE() << ", AForm grade_s " << obj.getGradeS() << std::endl;
+	os << obj.getName() << ", Form grade_e " << obj.getGradeE() << ", Form grade_s " << obj.getGradeS() << std::endl;
 	return (os);
 }

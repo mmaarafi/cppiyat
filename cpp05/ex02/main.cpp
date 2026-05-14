@@ -8,20 +8,21 @@ int main()
 {
 	// std::cout << std::bad_alloc().what() << std::endl;
 	// std::cout << Bureaucrat::GradeTooHighException().what() << std::endl;
+	std::srand(std::time(NULL)); // Seed once here
 	/*         constructor tests               */
-	Bureaucrat boss("bossy", 1);
-	Bureaucrat crook("crooky", 150);
+	Bureaucrat boss("boss", 1);
+	Bureaucrat crook("crook", 150);
 	AForm *a = new PresidentialPardonForm("1");
 	AForm *b = new ShrubberyCreationForm ("2");
 	AForm *c = new RobotomyRequestForm("3");
 	/*         signing forms tests             */
-	crook.signAForm(*a);
+	crook.signForm(*a);
 	std::cout << "=======================\n=======================" << std::endl;
-	boss.signAForm(*a);
+	boss.signForm(*a);
 	std::cout << "=======================\n=======================" << std::endl;
-	boss.signAForm(*b);
+	boss.signForm(*b);
 	std::cout << "=======================\n=======================" << std::endl;
-	boss.signAForm(*c);
+	boss.signForm(*c);
 	std::cout << "=======================\n=======================" << std::endl;
 	/*         AForm tests                     */
 	boss.executeForm(*a);

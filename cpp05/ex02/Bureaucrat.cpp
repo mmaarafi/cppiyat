@@ -46,7 +46,7 @@ void Bureaucrat::decrement()
 	this->grade++;
 }
 
-void Bureaucrat::signAForm(AForm &obj)
+void Bureaucrat::signForm(AForm &obj)
 {
 	try
 	{
@@ -82,6 +82,6 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& obj)
 {
-	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << std::endl;
+	os << obj.getName() << ", bureaucrat grade " << obj.getGrade() << "." << std::endl;
 	return (os);
 }

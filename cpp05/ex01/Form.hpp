@@ -5,24 +5,22 @@
 #include <exception>
 
 class Bureaucrat;
-class AForm {
+class Form {
 	private :
 		const std::string	name;
 		bool				sign;
 		const int			grade_s;
 		const int			grade_e;
 	public :
-		AForm();
-		AForm(std::string _name, int _grade_s, int _grade_e);
-		AForm(const AForm &cp);
-		AForm &operator=(const AForm &obj);
-		~AForm();
+		Form();
+		Form(std::string _name, int _grade_s, int _grade_e);
+		Form(const Form &cp);
+		Form &operator=(const Form &obj);
+		~Form();
 		const std::string getName() const;
 		int getGradeE() const;
 		int getGradeS() const;
 		bool getSign() const;
-		void increment();
-		void decrement();
 		void beSigned(const Bureaucrat &obj);
 		class GradeTooHighException : public std::exception {
 			public:
@@ -34,4 +32,4 @@ class AForm {
 		};
 };
 
-std::ostream& operator<<(std::ostream& os, const AForm& obj);
+std::ostream& operator<<(std::ostream& os, const Form& obj);

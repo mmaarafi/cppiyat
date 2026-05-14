@@ -1,7 +1,7 @@
 NAME = program
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Bureaucrat.cpp
 OBJ = $(SRC:%.cpp=obj/%.o)

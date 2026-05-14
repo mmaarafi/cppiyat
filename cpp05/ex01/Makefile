@@ -1,9 +1,9 @@
 NAME = program
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 OBJ = $(SRC:%.cpp=obj/%.o)
 
 all: $(NAME)
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-obj/%.o: %.cpp Bureaucrat.hpp AForm.hpp
+obj/%.o: %.cpp Bureaucrat.hpp Form.hpp
 	mkdir -p obj
 	$(CC) $(CFLAGS) -c $< -o $@
 

@@ -32,6 +32,6 @@ AForm *Intern::makeForm(std::string form_name, std::string _target)
 		std::cout << "couldn't find form" << std::endl;
 		return (NULL);
 	}
-	std::cout << "Intern creates " << levels[pos] << "form" << std::endl;
+	std::cout << "Intern creates " << levels[pos] << " form" << std::endl;
 	return (this->*methods[pos])(_target);
 }
