@@ -6,7 +6,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/ex00/convert",
-            "args": [],
+            "args": ["A"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],

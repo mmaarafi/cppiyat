@@ -1,6 +1,12 @@
-#include <iostream>
+#include "ScalarConverter.hpp"
 
 int main(int ac, char **av)
 {
-	std::cout << detectType(av[1]) << std::endl;
+	if (ac != 2)
+	{
+		std::cout << "Usage: ./convert \"param\"." << std::endl;
+		return (0);
+	}
+	(void) ac;
+	ScalarConverter::convert(av[1]);
 }
