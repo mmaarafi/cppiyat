@@ -1,18 +1,5 @@
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter() {}
-
-ScalarConverter::ScalarConverter(const ScalarConverter &cp) 
-{
-	(void) cp;
-}
-
-ScalarConverter &ScalarConverter::operator=(const ScalarConverter &obj)
-{
-	(void) obj;
-	return (*this);
-}
-
 int count_occurences(std::string value, char c)
 {
 	int i;
