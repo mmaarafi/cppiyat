@@ -1,4 +1,4 @@
-NAME = convert
+NAME = Serializer
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-obj/%.o: %.cpp Serializer.hpp
+obj/%.o: %.cpp Serializer.hpp Data.hpp
 	mkdir -p obj
 	$(CC) $(CFLAGS) -c $< -o $@
 

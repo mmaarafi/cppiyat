@@ -8,12 +8,11 @@
 
 class ScalarConverter {
 	private :
-		virtual void method() const = 0;
-	public :
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter &cp);
 		ScalarConverter &operator=(const ScalarConverter &obj);
 		~ScalarConverter();
+	public :
 		static  void convert(std::string value);
 };
 
