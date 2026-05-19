@@ -1,5 +1,8 @@
 #pragma once
 
+#include <iostream>
+#include <exception>
+#include <cstddef>
 template <typename T> class Array
 {
 	private:
