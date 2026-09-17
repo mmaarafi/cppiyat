@@ -25,16 +25,16 @@ void Span::addNumber(int number)
 		throw std::runtime_error("Span already full!");
 }
 
-int Span::shortestSpan()
+long Span::shortestSpan()
 {
 	if (this->S.size() >= 2)
 	{
 		std::vector<int> copy = this->S;
 		std::sort(copy.begin(), copy.end());
-		int min_span = copy[1] - copy[0];
+		long min_span = copy[1] - copy[0];
 		for (size_t i = 2; i < copy.size(); ++i)
 		{
-			int current_span = copy[i] - copy[i - 1];
+			long current_span = copy[i] - copy[i - 1];
 			if (current_span < min_span)
 				min_span = current_span;
 		}
@@ -44,7 +44,7 @@ int Span::shortestSpan()
 		throw std::runtime_error("Span needs to be equal or more then 2 numbers!");
 }
 
-int Span::longestSpan()
+long Span::longestSpan()
 {
 	if (this->S.size() >= 2)
 	{

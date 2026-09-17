@@ -25,7 +25,7 @@ int main()
 	// range of iterator test
 	Span sp(10000);
 	std::vector<int> massiveVector;
-	for (int i = 0; i < 9999; i++)
+	for (int i = 0; i < 10000; i++)
 		massiveVector.push_back(i * 2);
 	sp.addNumbers(massiveVector.begin(), massiveVector.end());
 	try
