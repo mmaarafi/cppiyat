@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "Data.hpp"
 
-class Serializer {	
+class Serializer {
 	private :
 		Serializer();
 		Serializer(const Serializer &cp);
