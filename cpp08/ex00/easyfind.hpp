@@ -1,10 +1,13 @@
 #pragma once
 
-template<typename T>void easyfind(T &a, int b)
+#include <iostream>
+#include <exception>
+#include <algorithm>
+
+template<typename T> 
+typename T::iterator easyfind(T &a, int b)
 {
-	int i = 0;
-	while (i < b)
-	{
-		
-	}
+	if (std::find(a.begin(), a.end(), b) != a.end())
+		return (std::find(a.begin(), a.end(), b));
+	throw std::runtime_error ("Element not found!");
 }

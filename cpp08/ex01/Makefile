@@ -1,9 +1,9 @@
-NAME = easyfind
+NAME = span
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-SRC = main.cpp
+SRC = main.cpp Span.cpp
 OBJ = $(SRC:%.cpp=obj/%.o)
 
 all: $(NAME)
@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-obj/%.o: %.cpp easyfind.hpp
+obj/%.o: %.cpp Span.hpp
 	mkdir -p obj
 	$(CC) $(CFLAGS) -c $< -o $@
 

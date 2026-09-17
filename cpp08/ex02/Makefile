@@ -1,5 +1,4 @@
-NAME = easyfind
-
+NAME = MutantStack
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
@@ -11,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
-obj/%.o: %.cpp easyfind.hpp
+obj/%.o: %.cpp MutantStack.hpp
 	mkdir -p obj
 	$(CC) $(CFLAGS) -c $< -o $@
 
