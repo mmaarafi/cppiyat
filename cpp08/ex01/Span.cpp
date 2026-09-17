@@ -25,16 +25,16 @@ void Span::addNumber(int number)
 		throw std::runtime_error("Span already full!");
 }
 
-long Span::shortestSpan()
+long Span::shortestSpan() const
 {
 	if (this->S.size() >= 2)
 	{
 		std::vector<int> copy = this->S;
 		std::sort(copy.begin(), copy.end());
-		long min_span = copy[1] - copy[0];
+		long min_span = static_cast<long>(copy[1]) - static_cast<long>(copy[0]);
 		for (size_t i = 2; i < copy.size(); ++i)
 		{
-			long current_span = copy[i] - copy[i - 1];
+			long current_span = static_cast<long>(copy[i]) - static_cast<long>(copy[i - 1]);
 			if (current_span < min_span)
 				min_span = current_span;
 		}
@@ -44,13 +44,13 @@ long Span::shortestSpan()
 		throw std::runtime_error("Span needs to be equal or more then 2 numbers!");
 }
 
-long Span::longestSpan()
+long Span::longestSpan() const
 {
 	if (this->S.size() >= 2)
 	{
-		std::vector<int>::iterator min = std::min_element(this->S.begin(), this->S.end());
-		std::vector<int>::iterator max = std::max_element(this->S.begin(), this->S.end());
-		return (*max - *min);
+		std::vector<int>::const_iterator min = std::min_element(this->S.begin(), this->S.end());
+		std::vector<int>::const_iterator max = std::max_element(this->S.begin(), this->S.end());
+		return (static_cast<long>(*max) - static_cast<long>(*min));
 	}
 	else
 		throw std::runtime_error("Span needs to be equal or more then 2 numbers!");

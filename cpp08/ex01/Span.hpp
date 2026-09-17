@@ -17,8 +17,8 @@ class Span {
 		Span &operator=(const Span &obj);
 		~Span();
 		void addNumber(int number);
-		long shortestSpan();
-		long longestSpan();
+		long shortestSpan() const;
+		long longestSpan() const;
 		template <typename it>
 		void addNumbers(it begin, it end)
 		{

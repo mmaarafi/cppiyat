@@ -1,17 +1,18 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <climits>
 #include "Span.hpp"
 
 int main()
 {
 	// shortest span longest span addnumber exception
 	Span a(5);
-	a.addNumber(10);
+	a.addNumber(INT_MAX);
 	a.addNumber(15);
 	a.addNumber(99);
 	a.addNumber(100);
-	a.addNumber(29);
+	a.addNumber(INT_MIN);
 	try
 	{
 		a.addNumber(29);
